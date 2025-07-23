@@ -1,0 +1,208 @@
+<!DOCTYPE html>  
+<html lang="es"> <!-- idioma  -->
+<head>
+    <meta charset="UTF-8"> <!-- tildes  -->
+    <title> conjuto de prendas  </title>  <!--  titulo o nombre de la pagina -->
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        header {
+            background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/be6f81154352355.634046dbd5883.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center; 
+        }
+        header h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .producto {
+            background-color: white;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .producto:hover {
+            transform: scale(1.03);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+        .boton-compra {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .boton-compra:hover {
+            background-color: #219150;
+        }
+        .contacto {
+            text-align: center;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .contacto a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .contacto a:hover {
+            color: #2980b9;
+        }
+
+        /* Estilos para ventana emergente */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-contenido {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            animation: entrada 0.5s ease;
+        }
+        .popup-contenido img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        .popup-contenido h2 {
+            margin: 0 0 10px 0;
+        }
+        .cerrar {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @keyframes entrada {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Boutique Lunaria</h1>
+</header>
+
+<section class="contenedor">
+
+    <div class="producto">
+        <img src="https://product-images-cdn.liketoknow.it/KkDhu3wsMvPLs_vY3ulcmHsEl1BAoNyW.3AKWL.yEem0PdbKbKhUp39urXYdJI0ehR6Iz1E9Cd1OoRG28e_bye8GDD68nsPLy5zgY.M6WkuoEGvzYUwJryutLgks414wi9ki1J5RePDLsFU9yzIPLP2.bOF.yEKzYbjFE0ktt_7gXqoEi65Keb.E_TI-?v=0&auto=format&fm=jpg&w=450&q=80&dpr=1" alt="conjuntos">
+        <h2> Estilo Old Money </h2>
+        <p><strong>Q500.00</strong></p>
+        <p> blusa/chaqueta, Color Marfil,Diseño Tipo chaqueta, Detalles: lleva lazo color negro al cuello. Talla disponibles XS,S,M,L XL.</p>
+        <button class="boton-compra" onclick="mostrarPopup('HP ProBook 450')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://ae01.alicdn.com/kf/S92a35c2a005a4a5c88849d2d0f462688D/Brown-Navy-Black-Ladies-Formal-Pant-Suit-Women-Jacket-And-Trouser-Female-Business-Work-Wear-2.jpg_.webp" alt="conjunto formal">
+        <h2>Estilo formal</h2>
+        <p><strong>Q1,000.00</strong></p>
+        <p> Conjunto formal de ofina color azul marino, Detalles: chaqueta de estilo blazer, pantalones de a juego, incluyr bolsa de mano y tacones color dorado.</p>
+        <button class="boton-compra" onclick="mostrarPopup('Dell Inspiron 14')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://i.pinimg.com/736x/b8/39/f7/b839f78d0b12abbba380d7345b098767.jpg" alt="Conjunto Old Money">
+        <h2>Conjunto old money</h2>
+        <p><strong>Q.800.00</strong></p>
+        <p>conjunto old money. detalles: blusa negra, y falda de cuadros. incluye zapatos y accesorio para el cabello.</p>
+        <button class="boton-compra" onclick="mostrarPopup('Lenovo IdeaPad 3')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://i.pinimg.com/736x/3d/0e/1d/3d0e1dc7436b6424e7eb8ea4c9b59925.jpg"Conjunto casual">
+        <h2>Conjunto casual</h2>
+        <p><strong>Q.450.00</strong></p>
+        <p>conjunto casual que incluye blusa color rosado. sueter color blanco y falda de cuadros, y una cartera</p>
+        <button class="boton-compra" onclick="mostrarPopup('Lenovo IdeaPad 3')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://i.pinimg.com/originals/61/35/90/613590004b1468de90e4e8039430369b.png" alt="Conjunto Old Money">
+        <h2>vestido old money</h2>
+        <p><strong>Q.500.00</strong></p>
+        <p>vestido color negro estilo old money, incluye accesorio para el cabello, bolsa de mano, tacones.</p>
+        <button class="boton-compra" onclick="mostrarPopup('Lenovo IdeaPad 3')">Comprar</button>
+    </div>
+
+</section>
+
+<div class="contacto">
+    <h3>Contáctanos</h3>
+
+
+<div class="popup" id="popup">
+    <div class="popup-contenido">
+    <a href="https://wa.me/qr/MSA3B6VSX6OUA1" target="_blank">📱 WhatsApp</a>
+    <a href="mailto:ventas@domotronic.com">📧 Correo</a>
+    <a href="tel:+50237276610">📞 Llamada</a>
+</div>
+        <img src="https://i.imgur.com/U9dFIdh.png" alt="Éxito">
+        <h2>¡Compra realizada!</h2>
+        <p id="mensajeProducto"></p>
+        <button class="cerrar" onclick="cerrarPopup()">Aceptar</button>
+    </div>
+</div>
+
+<script>
+    function mostrarPopup(producto) {
+        document.getElementById("mensajeProducto").innerText = "Has comprado: " + producto + ". Te contactaremos pronto.";
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function cerrarPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
